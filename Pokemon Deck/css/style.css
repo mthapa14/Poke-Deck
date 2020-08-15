@@ -1,0 +1,246 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: white;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+header{
+    position: relative;
+    margin: auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+}
+
+input, button{
+    border: 1px solid #dedede;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-size: 15px;
+    padding: 8px 10px;
+    margin-bottom: 3px;
+}
+input[type='text']{
+    width: 460px;
+}
+input:focus{
+    background-color: whitesmoke;
+    box-shadow:  inset 1px 1px 1px #000000;
+}
+
+.search-btn{
+    cursor: pointer;
+    border-left: 0;
+    border-radius: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.error-message{
+    align-items: center;
+    text-align: center;
+    color: red;
+}
+
+
+
+.poke-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: space-between;
+	justify-content: center;
+	margin: 0 auto;
+    max-width: 1200px;
+}
+
+.pokemon {
+	background-color: white;
+	border-radius: 30px;
+	box-shadow: 0 3px 10px rgba(129, 121, 121, 0.5);
+	margin: 20px 10px;
+	padding: 20px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.pokemon:hover{
+    background-color: rgba(231, 223, 223, 0.3);
+    transform: scale(1.1);
+}
+
+.pokemon .img-container {
+	background-color: rgba(179, 161, 161, 0.8);
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	text-align: center;
+}
+
+.pokemon .img-container img {
+	margin-top: 20px;
+	max-width: 90%;
+}
+
+.pokemon .info {
+    font-size: 16px;
+    color: teal;
+    text-align: center;
+    justify-content: center;
+
+    margin-top: 30px;
+
+}
+
+.pokemon .number {
+	background-color: rgba(73, 78, 148, 0.3);
+	border-radius: 10px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+}
+
+.pokemon .name {
+	margin: 10px 0px;
+    letter-spacing: 1px;
+    background-color: rgba(165, 183, 192, 0.2);
+    text-transform: capitalize;
+    padding: 5px 0px;
+    border-radius: 20%;
+}
+
+
+
+
+
+.pokemon-detail{
+    position: fixed;
+    transform: translateX(100%);
+    transition: transform 1s ease-in-out;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.pokemon-detail.show{
+    transform: translateX(0px);
+}
+
+/* .modal-panel{
+    position: fixed;
+    top: 13%;
+    padding: 30px 0px;
+    box-shadow: 0px 3px 10px rgba(49, 170, 49, 0.5);
+    background-color: rgb(253, 253, 253);
+    text-align: center;
+    font-size: 18px;
+    height: 40%;
+    width: 40%;
+    max-height: 450px;
+    max-width: 400px;
+    margin: 2px;
+} */
+
+.pokemon-detail .modal-panel {
+    box-shadow: 0px 3px 10px rgba(156, 187, 176, 0.9);
+    background-color: rgba(14, 15, 15, 0.7);
+	width: 30%;
+    height: 35%;
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+}
+
+.pokemon-detail .img-detail img {
+	max-width: 90%;
+}
+
+.pokemon-detail .img-detail{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.pokemon-detail .poke-detail{
+    color: white;
+    text-transform: capitalize;
+    line-height: 1px;
+}
+
+.poke-detail .number{
+    color: rgb(25, 221, 25);
+    text-decoration: underline;
+}
+
+.poke-detail .name{
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.hide{
+    display: none;
+}
+
+
+@media screen and (max-width:600px){
+    .p{
+        font-size: 10px;
+    }
+    input[type='text']{
+        width: 260px;
+    }
+    .match-container{
+        width: 260px;
+    }
+    .sub-container{
+        font-size: 12px;
+    }
+    .pokemon {
+        padding: 10px;
+
+    }
+    
+    .pokemon .img-container {
+        width: 120px;
+        height: 70px;
+    }
+    .pokemon .img-container img {
+        height: 73px;
+    }
+    
+    .pokemon .info {
+        font-size: 12px;
+    
+    }
+
+    .pokemon-detail{
+        flex-direction: column;
+        top: 10%;
+        transform: translateY(100%);
+    }
+    .pokemon-detail.show{
+        transform: translateY(0px);
+    }
+
+    .pokemon-detail .modal-panel {
+        width: 60%;
+        height: 25%;
+    }
+}
